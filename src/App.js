@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Logo from './Logo';
+import BestPokemon from './BestPokemon'
+import CaughtPokemon from './caughtPokemon'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const abilities = ["Anticipation", "Adaptability", "Runaway", "Jump high"]
+const date = new Date().toLocaleDateString()
+
+
+const App = () => {
+    return ( 
+    <div>
+      <Logo appName = "Pokedex"/>
+      <BestPokemon Abilities = {abilities} />
+      <CaughtPokemon Date = {date}/>
+    </div>)
+
+    }
+
+
 
 export default App;
