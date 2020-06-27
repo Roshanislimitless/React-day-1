@@ -2,9 +2,9 @@ import React from 'react';
 import Logo from './Logo';
 import BestPokemon from './BestPokemon'
 import CaughtPokemon from './caughtPokemon'
-import BestPokemonFetcher from './BestPokemon';
 
-const abilities = ["Anticipation", "Adaptability", "Runaway", "Jump high"]
+//const abilities = ["Anticipation", "Adaptability", "Runaway", "Jump high"]
+//the abilities prop has been removed because of the real api fetch
 const date = new Date().toLocaleDateString()
 
 
@@ -17,7 +17,7 @@ const App = () => {
     return ( 
     <div>
       <Logo appName = "Pokedex" handleClick={logWhenClicked}/>
-      <BestPokemon Abilities = {abilities} />
+      <BestPokemon />
       <CaughtPokemon Date = {date}/>
     </div>)
 

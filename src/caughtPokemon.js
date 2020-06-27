@@ -3,22 +3,42 @@ import React, { useState } from 'react'
 
 const CaughtPokemon = ( ) => {
 
-  let [totalCaught, ToCountPokemom ] = useState(4);
+  const [caughtPokemon, setCaughtPokemon ] = useState([]);
+  console.log(caughtPokemon);
+  
 
-  const incrementTotal = () => {
-    ToCountPokemom(
-      totalCaught + 1)
+  const [pokemonNameInput, setPokemonNameInput] = useState('')
+
+  const handleInputChanges = (event) => {
+    setPokemonNameInput(event.target.value)
+    console.log(pokemonNameInput);
+    
   }
 
-  const decrementTotal = ( ) =>{
-    ToCountPokemom(totalCaught - 1)
+  const catchedPokemon = () => {
+    if(pokemonNameInput)
+  {const updatedcaughtPokemon = [...caughtPokemon, pokemonNameInput]
+    setCaughtPokemon(
+      updatedcaughtPokemon )}
   }
+
     const date = new Date().toLocaleDateString()
     return (
     <div>
-    <button onClick={incrementTotal}>Click me  </button>
-    <p>Caught {totalCaught} Pokemon on {date} </p>
-    <button onClick={decrementTotal}>Click me  </button>
+    <input
+    type='text'
+    value={pokemonNameInput}
+    onChange={handleInputChanges}/>
+    
+    <button onClick={catchedPokemon}>Click me  </button>
+
+
+    <p>Caught
+        <ul>
+        {caughtPokemon.map((any, index) => <li key={index}>any</li>)} Pokemon on {date} 
+          </ul>
+          
+    </p>
     </div>
     )
   }
