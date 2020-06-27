@@ -10,6 +10,7 @@ const CaughtPokemon = ( ) => {
   const [pokemonNameInput, setPokemonNameInput] = useState('')
 
   const handleInputChanges = (event) => {
+    
     setPokemonNameInput(event.target.value)
     console.log(pokemonNameInput);
     
@@ -17,7 +18,10 @@ const CaughtPokemon = ( ) => {
 
   const catchedPokemon = () => {
     if(pokemonNameInput)
-  {const updatedcaughtPokemon = [...caughtPokemon, pokemonNameInput]
+    
+  {
+    setPokemonNameInput('')
+    const updatedcaughtPokemon = [...caughtPokemon, pokemonNameInput]
     setCaughtPokemon(
       updatedcaughtPokemon )}
   }
@@ -35,7 +39,7 @@ const CaughtPokemon = ( ) => {
 
     <p>Caught
         <ul>
-        {caughtPokemon.map((any, index) => <li key={index}>any</li>)} Pokemon on {date} 
+        {caughtPokemon.map((any, index) => <li key={index}>{any}</li>)} Pokemon on {date} 
           </ul>
           
     </p>
